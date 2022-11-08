@@ -36,25 +36,7 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object { Set-Variable -Name "WPF$($_.N
  
 Function Get-FormVariables {
     #If ($global:ReadmeDisplay -ne $true) { Write-host "If you need to reference this display again, run Get-FormVariables" -ForegroundColor Yellow; $global:ReadmeDisplay = $true }
-    
 
-    write-host ""                                                                                                                             
-    write-host "    CCCCCCCCCCCCCTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT   "
-    write-host " CCC::::::::::::CT:::::::::::::::::::::TT:::::::::::::::::::::T   "
-    write-host "CC:::::::::::::::CT:::::::::::::::::::::TT:::::::::::::::::::::T  "
-    write-host "C:::::CCCCCCCC::::CT:::::TT:::::::TT:::::TT:::::TT:::::::TT:::::T "
-    write-host "C:::::C       CCCCCCTTTTTT  T:::::T  TTTTTTTTTTTT  T:::::T  TTTTTT"
-    write-host "C:::::C                     T:::::T                T:::::T        "
-    write-host "C:::::C                     T:::::T                T:::::T        "
-    write-host "C:::::C                     T:::::T                T:::::T        "
-    write-host "C:::::C                     T:::::T                T:::::T        "
-    write-host "C:::::C                     T:::::T                T:::::T        "
-    write-host "C:::::C                     T:::::T                T:::::T        "
-    write-host "C:::::C       CCCCCC        T:::::T                T:::::T        "
-    write-host "C:::::CCCCCCCC::::C      TT:::::::TT            TT:::::::TT       "
-    write-host "CC:::::::::::::::C       T:::::::::T            T:::::::::T       "
-    write-host "CCC::::::::::::C         T:::::::::T            T:::::::::T       "
-    write-host "  CCCCCCCCCCCCC          TTTTTTTTTTT            TTTTTTTTTTT       "
     write-host ""
     write-host "====Chris Titus Tech====="
     write-host "=====Windows Toolbox====="
@@ -71,7 +53,7 @@ Get-FormVariables
 #===========================================================================
 # Global Variables
 #===========================================================================
-$AppTitle = "Chris Titus Tech's Windows Utility"
+$AppTitle = "CTT's Windows Utility"
 
 
 #===========================================================================
@@ -700,6 +682,58 @@ $WPFlaptop.Add_Click({
         $WPFMiscTweaksPower.IsChecked = $false
         $WPFMiscTweaksNum.IsChecked = $false
     })
+$WPFMainlinelaptop.Add_Click({
+
+        $WPFEssTweaksAH.IsChecked = $true
+        $WPFEssTweaksDeleteTempFiles.IsChecked = $true
+        $WPFEssTweaksDeBloat.IsChecked = $false
+        $WPFEssTweaksRemoveCortana.IsChecked = $false
+        $WPFEssTweaksRemoveEdge.IsChecked = $false
+        $WPFEssTweaksDiskCleanup.IsChecked = $false
+        $WPFEssTweaksDVR.IsChecked = $true
+        $WPFEssTweaksHiber.IsChecked = $false
+        $WPFEssTweaksHome.IsChecked = $true
+        $WPFEssTweaksLoc.IsChecked = $true
+        $WPFEssTweaksOO.IsChecked = $true
+        $WPFEssTweaksRP.IsChecked = $true
+        $WPFEssTweaksServices.IsChecked = $true
+        $WPFEssTweaksStorage.IsChecked = $true
+        $WPFEssTweaksTele.IsChecked = $true
+        $WPFEssTweaksWifi.IsChecked = $true
+        $WPFMiscTweaksDisableUAC.IsChecked = $false
+        $WPFMiscTweaksDisableNotifications.IsChecked = $false
+        $WPFMiscTweaksRightClickMenu.IsChecked = $false
+        $WPFMiscTweaksLapPower.IsChecked = $true
+        $WPFMiscTweaksLapNum.IsChecked = $true
+        $WPFMiscTweaksPower.IsChecked = $false
+        $WPFMiscTweaksNum.IsChecked = $false
+    })
+$WPFMerionlaptop.Add_Click({
+
+        $WPFEssTweaksAH.IsChecked = $true
+        $WPFEssTweaksDeleteTempFiles.IsChecked = $true
+        $WPFEssTweaksDeBloat.IsChecked = $false
+        $WPFEssTweaksRemoveCortana.IsChecked = $false
+        $WPFEssTweaksRemoveEdge.IsChecked = $false
+        $WPFEssTweaksDiskCleanup.IsChecked = $false
+        $WPFEssTweaksDVR.IsChecked = $true
+        $WPFEssTweaksHiber.IsChecked = $false
+        $WPFEssTweaksHome.IsChecked = $true
+        $WPFEssTweaksLoc.IsChecked = $true
+        $WPFEssTweaksOO.IsChecked = $true
+        $WPFEssTweaksRP.IsChecked = $true
+        $WPFEssTweaksServices.IsChecked = $true
+        $WPFEssTweaksStorage.IsChecked = $true
+        $WPFEssTweaksTele.IsChecked = $true
+        $WPFEssTweaksWifi.IsChecked = $true
+        $WPFMiscTweaksDisableUAC.IsChecked = $false
+        $WPFMiscTweaksDisableNotifications.IsChecked = $false
+        $WPFMiscTweaksRightClickMenu.IsChecked = $false
+        $WPFMiscTweaksLapPower.IsChecked = $true
+        $WPFMiscTweaksLapNum.IsChecked = $true
+        $WPFMiscTweaksPower.IsChecked = $false
+        $WPFMiscTweaksNum.IsChecked = $false
+    })
 
 $WPFminimal.Add_Click({
     
@@ -1279,6 +1313,7 @@ $WPFtweaksbutton.Add_Click({
                 "HiddenCity"
                 "AdobePhotoshopExpress"
                 "HotspotShieldFreeVPN"
+                "Disney"
 
                 #Optional: Typically not removed but you can if you need to
                 "Advertising"
@@ -1287,6 +1322,10 @@ $WPFtweaksbutton.Add_Click({
                 #"Windows.Photos"
                 #"WindowsCalculator"
                 #"WindowsStore"
+                
+                # Dell Bloatware Packages
+                "DellCommandUpdate"
+                "DellDigitalDelivery"
 
                 # HPBloatware Packages
                 "HPJumpStarts"
