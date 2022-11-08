@@ -1078,6 +1078,20 @@ $WPFtweaksbutton.Add_Click({
             Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 1
             Write-Host "Hiding Task View button..."
             Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0
+
+            ## CybrWlf disable Widgets in Windows 11
+            Write-Host "Hiding Widgets button..."
+            If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Dsh")) {
+                New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Dsh" | Out-Null
+            }
+            Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Dsh" -Name "AllowNewsAndInterests" -Type DWord -Value 0
+
+            ## CybrWlf disable Teams Chat in Windows 11
+            Write-Host "Hiding Chat icon..."
+            Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarMn" -Type DWord -Value 0
+
+            
+            
             Write-Host "Hiding People icon..."
             If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
                 New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" | Out-Null
